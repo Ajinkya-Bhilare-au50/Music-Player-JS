@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>MusicPlayerApp</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <link rel="shortcut icon" href="#" />
+
+    <script
+      src="https://kit.fontawesome.com/b90a785047.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        position: relative;
+        font-family: "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      .diver {
+        width: 10px;
+        /* border-radius: 90px; */
+        background-color: black;
+        animation-name: spin;
+        animation-duration: 5000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        position: absolute;
+        left: 110%;
+
+        /* make the top edge of .inner appear in the vertical center of .outer */
+        top: 60%;
+
+        /* move .inner up by half of its height so that its middle is in the middle of .outer */
+        transform: translateY(-50%);
+
+        /* transform: rotate(3deg); */
+        /* transform: rotate(0.3rad);/ */
+        /* transform: rotate(3grad); */
+        /* transform: rotate(.03turn);  */
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .container1 {
+        width: 55%;
+        height: 460px;
+
+        background-color: #6b6c81;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      .line {
+        margin-top: 40px;
+        border-color: #4f5065;
+      }
+      .overfloat {
+        width: 250px;
+        height: 250px;
+        background-color: #ddded9;
+
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+
+        bottom: 300px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      .fa-solid {
+        color: White;
+        cursor: pointer;
+      }
+      .items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 35px;
+      }
+      .upper {
+        margin: 20px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+      }
+      .colored {
+        background-color: #000000;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+        cursor: pointer;
+      }
+      .fa-heart,
+      .fa-repeat {
+        color: #ffffff;
+        cursor: pointer;
+      }
+      .addcolor {
+        color: red;
+      }
+      .image2 {
+        width: 100px;
+        position: absolute;
+        left: 10%;
+        top: 10%;
+        background-color: transparent;
+      }
+      .image {
+        width: 90%;
+        /* padding-left:20px; */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+      }
+      .Large {
+        font-size: xx-large;
+      }
+      .wrapper {
+        padding-left: 65px;
+        padding-top: 120px;
+        font-size: larger;
+        color: rgb(218, 215, 215);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .volume {
+        margin-left: 10px;
+      }
+      .timer {
+        display: flex;
+        padding-top: 5px;
+        color: aliceblue;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: small;
+      }
+      .sliderdiv {
+        margin: 15px;
+        color: #13bba4;
+        margin-top: 15px;
+      }
+      .inputslider {
+        width: 100%;
+      }
+      #myinput {
+        background: linear-gradient(
+          to right,
+          #f70909 100%,
+          #82cfd0 50%,
+          #fff 50%,
+          #fff 100%
+        );
+        /* border: solid 1px #82cfd0; */
+        border-radius: 8px;
+        height: 7px;
+        
+        outline: none;
+        transition: background 450ms ease-in;
+        /* -webkit-appearance: none; */
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div class="container1">
+      <img class="image2" id="diver" src="./musicicon.png" alt="" />
+      <div class="overfloat">
+        <img class="image" id="addin" src="./musicL.png" alt="" />
+      </div>
+      <div class="upper">
+        <i class="fa-solid fa-heart" id="garbage1"></i>
+        <i class="fa-solid fa-repeat"></i>
+      </div>
+      <div class="wrapper">
+        <h3 class="Large" id="songname">Raataan Lambiyan</h3>
+        <p id="artistname">Artist-Echos</p>
+        <p id="albumname">Album-Shershaah Original Motion Picture Soundtrack</p>
+      </div>
+      <div class="sliderdiv" id="myprogressbar">
+        <!-- <audio controls>
+          <source src="./songs/2.mp3" type="audio/mp3" />
+        </audio> -->
+        <input
+          type="range"
+          name=""
+          id="myinput"
+          min="0"
+          max="250"
+          class="inputslider"
+          value="0"
+          onchange="change_duration()"
+        />
+      </div>
+
+      <div class="timer">
+        <p>0:00</p>
+        <p>4:20</p>
+      </div>
+      <div class="items">
+        <i class="fa-solid fa-backward" id="previous"></i>
+        <div class="colored" id="colored">
+          <i class="fa-solid fa-play fa-xl" id="playButton"></i>
+        </div>
+        <i class="fa-solid fa-forward" id="next"></i>
+      </div>
+      <div class="volume"><i class="fa-solid fa-volume-high"></i></div>
+    </div>
+
+    <script src="songs.js" async defer></script>
+  </body>
+</html>
